@@ -6,13 +6,15 @@ ALL = $(CODE) $(TESTS)
 VENV ?= .venv
 
 venv:
-	python3 -m venv $(VENV)
-	$(VENV)/bin/python -m pip install --upgrade pip
-	$(VENV)/bin/python -m pip install poetry
-	$(VENV)/bin/poetry install
+	python -m venv $(VENV)
+	.venv\Scripts\activate
+	python -m pip install --upgrade pip
+	python -m pip install poetry
+	poetry install
+	.venv\Scripts\activate
 
 test:
-	$(VENV)/bin/pytest -v tests
+	pytest -v tests
 
 lint:
 	$(VENV)/bin/flake8 --jobs 4 --statistics --show-source $(ALL)

@@ -14,6 +14,8 @@ black = "^19.10b0"
 unify = "^0.5"
 flake8 = "^3.7.9"
 pylint = "^2.4.4"
+mock = "^4.0.2"
+module = "^0.0.4"
 
 [tool.poetry.dev-dependencies]
 

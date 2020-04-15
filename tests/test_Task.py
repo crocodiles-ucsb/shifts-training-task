@@ -2,7 +2,7 @@ import src.Task as task
 
 
 def test_app():
-    input_values = ["3 10", "10 45 50"]
+    input_values = ['3 10', '10 45 50']
     output = []
 
     def mock_input():

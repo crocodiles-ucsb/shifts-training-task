@@ -8,5 +8,7 @@ class Dove:
         self.time_of_way = (Dove.distance / self.speed) + self.number_of_dove
 
     def __str__(self):
-        return f"Dove {self.number_of_dove} has speed {self.speed} km/min and " \
-               f"it will arrive in {self.time_of_way} minute"
+        return (
+            f'Dove {self.number_of_dove} has speed {self.speed} km/min and '
+            f'it will arrive in {self.time_of_way} minute'
+        )

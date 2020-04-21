@@ -1,5 +1,6 @@
 import pytest
 
+
 values = [
     {'speed': 10, 'number': 0, 'distance': 10, 'time': 1.0},
     {'speed': 45, 'number': 1, 'distance': 10, 'time': float(10 / 45 + 1)},
@@ -9,5 +10,5 @@ values = [
 
 
 @pytest.fixture(params=values)
-def get_dict(request):
+def specifications(request):
     return request.param

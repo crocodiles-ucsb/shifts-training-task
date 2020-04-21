@@ -2,18 +2,6 @@ import pytest
 from src.Dove import Dove
 
 
-@pytest.mark.parametrize(('dist', 'result'), [(5, 5), (0, 0)])
-def test_distance(dist, result):
-    Dove.distance = dist
-    assert Dove.distance == result
-
-
-@pytest.mark.parametrize(('count', 'result'), [(5, 5), (0, 0)])
-def test_count(count, result):
-    Dove.count = count
-    assert Dove.count == result
-
-
 @pytest.mark.parametrize(
     ('speed', 'number', 'distance', 'result'),
     [
@@ -24,15 +12,10 @@ def test_count(count, result):
 def test_get_string(speed, number, distance, result):
     Dove.distance = distance
     dove = Dove(speed, number)
-    assert dove.__str__() == result
+    assert str(dove) == result
 
 
-def test_time(get_dict):
-    # assert get_dict == 42
-    speed = get_dict['speed']
-    number = get_dict['number']
-    distance = get_dict['distance']
-    time = get_dict['time']
-    Dove.distance = distance
-    dove = Dove(speed, number)
-    assert dove.time_of_way == time
+def test_time(specifications):
+    Dove.distance = specifications['distance']
+    dove = Dove(specifications['speed'], specifications['number'])
+    assert dove.time_of_way == specifications['time']

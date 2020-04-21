@@ -1,16 +1,10 @@
-import src.Task as task
-
-
-def test_app():
-    input_values = ['3 10', '10 45 50']
-    output = []
-
-    def mock_input():
-        return input_values.pop(0)
-
-    task.input = mock_input
-    task.print = lambda s: output.append(s)
-
-    task.task()
-
-    assert output == [0]
+# import pytest
+# from src.Task import get_shifts
+#
+#
+# @pytest.mark.parametrize(
+#     ('first_string', 'second_string', 'result'),
+#     [('3 10', '10 45 50', 0), ('3 50', '10 20 50', 3), ('1 50', '10', 0)],
+# )
+# def test_get_shifts(first_string, second_string, result):
+#     assert get_shifts(first_string, second_string) == result

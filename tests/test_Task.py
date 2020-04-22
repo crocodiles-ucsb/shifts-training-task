@@ -1,10 +1,17 @@
-# import pytest
-# from src.Task import get_shifts
-#
-#
-# @pytest.mark.parametrize(
-#     ('first_string', 'second_string', 'result'),
-#     [('3 10', '10 45 50', 0), ('3 50', '10 20 50', 3), ('1 50', '10', 0)],
-# )
-# def test_get_shifts(first_string, second_string, result):
-#     assert get_shifts(first_string, second_string) == result
+import pytest
+from src.Task import parse_args
+
+
+@pytest.mark.parametrize(
+    ('args', 'result'),
+    [
+        (
+            ['-f', '3 10', '-s', '10 45 50'],
+            "Namespace(first_string='3 10', second_string='10 45 50')",
+        )
+    ],
+)
+def test_parser(args, result):
+    parser = parse_args(args)
+    # assert True
+    assert str(parser) == result

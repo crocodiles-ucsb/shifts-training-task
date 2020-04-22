@@ -7,7 +7,7 @@ def get_parse(first_string, second_string):
     return {
         'count': first_string[0],
         'distance': first_string[1],
-        'speeds': second_string
+        'speeds': second_string,
     }
 
 
@@ -33,6 +33,3 @@ def get_answer(first_string, second_string):
     data = get_parse(first_string, second_string)
     doves = create_doves(data['count'], data['distance'], data['speeds'])
     return get_shift(doves)
-
-
-
